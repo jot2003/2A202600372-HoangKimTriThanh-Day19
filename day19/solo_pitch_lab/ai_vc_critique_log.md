@@ -143,3 +143,59 @@ You claim “healthy unit economics” but don’t quote **ARPU, CAC, TAM adopti
 
 - **Archetype:** The Skeptic.  
 - **Hook (≤25 từ):** *Senior dev tập một mình: app phải hiện confidence + cho tắt cue — nếu không, nghi AI bịa và gỡ app trong 30 giây.*
+
+---
+
+## H. Round 2 critique (phản hồi AI thực tế từ user) + cập nhật quyết định
+
+### Tóm tắt phản hồi Round 2 (partner-style)
+
+- **8-second test:** pass "barely"; phải mở bằng spike **71% churn** thay vì mở bằng mô tả user chung.
+- **Insight test:** "feedback gap" bị xem là generic; cần lớp sâu hơn: **trust under imperfect sensing**.
+- **OpenAI threat:** on-device + rule-based chưa phải moat; cần trả lời rõ vì sao user không chuyển sang platform.
+- **Numbers test:** chê over-modeled (TAM/adoption/ARPU/LTV-CAC) khi chưa có paid dữ liệu.
+- **Weakest line:** "Unit economics healthy" làm giảm độ tin cậy ở giai đoạn pre-seed.
+
+### Cập nhật Accept / Reject / Partial sau Round 2
+
+| Điểm critique | Quyết định | Hành động đã làm |
+|---------------|------------|------------------|
+| Lead with 71% | **Accept** | Đổi opening trong `pitch_memo.md` và `twitter_pitch.md` để vào thẳng hook 71%. |
+| Insight generic | **Accept** | Reframe insight thành **trust gap dưới sensing không hoàn hảo**. |
+| Moat yếu trước OpenAI | **Partial** | Không claim moat "bất khả xâm phạm"; chuyển thành thesis về trust loop + dữ liệu correction theo bối cảnh VN cần kiểm chứng. |
+| Over-modeled numbers | **Accept** | Bỏ claim chắc chắn về LTV/CAC trong memo; ghi rõ "chưa có CAC/paid retention thực tế". |
+| Unit economics healthy (tone overclaim) | **Accept** | Thay bằng framing trung thực: round này để validate willingness-to-pay + retention 4 tuần trước scale. |
+
+### Delta của bản final sau Round 2
+
+- `pitch_memo.md`: từ "projection-driven" sang "validation-driven", giữ 6 sections nhưng giảm overclaim.
+- `twitter_pitch.md`: đổi sang trust-first thesis, vẫn dưới 280 ký tự.
+- Mục tiêu pitch: tăng độ tin cậy với Seed VC bằng honesty + test plan rõ, thay vì cố chứng minh mọi thứ đã solved.
+
+---
+
+## I. Round 3 critique (meaningfully better, but still breakable)
+
+### Điểm chính AI vặn ở Round 3
+
+- Hook 71% tốt hơn nhưng vẫn còn "internet-known", chưa phải dữ liệu riêng của team.
+- Insight trust gap được đánh giá tốt, nhưng cần "operationalize": định nghĩa trust decay bằng biến đo cụ thể.
+- OpenAI threat vẫn mong manh nếu chỉ nói local context/trust loop chung chung.
+- Numbers honest hơn nhưng thiếu "execution thresholds" rõ để quyết định scale hay không.
+- Câu "chạy trước platform ngang" bị đánh giá phòng thủ.
+
+### Quyết định Round 3
+
+| Điểm critique | Quyết định | Hành động đã làm |
+|---------------|------------|------------------|
+| Hook còn category-level | **Partial** | Giữ 71% để pass 8-second test, đồng thời chuyển trọng tâm sang giả thuyết đo được: trust collapse sau 1-2 cue sai. |
+| Insight chưa đủ predictive | **Accept** | Sửa insight trong `pitch_memo.md` thành "optimize when NOT to cue", không chỉ nói feedback gap. |
+| Moat chưa sắc | **Accept** | Nâng thesis thành dữ liệu **trust-calibration** (accepted/ignored, fatigue phase, camera condition) + ngưỡng theo user. |
+| Numbers underpowered | **Accept** | Bổ sung pilot 100-150 user + Go/No-Go rõ: Corrected-Cue >= 60% và W4 retention >= 25% mới scale. |
+| Strategic line yếu | **Accept** | Thay wording defensiveness bằng "vertical layer theo lịch sử vận động từng user" ngay trong WHY NOW + ASK. |
+
+### Trạng thái sau Round 3
+
+- `pitch_memo.md`: đã có hypothesis đo được + ngưỡng quyết định scale.
+- `twitter_pitch.md`: cập nhật theo trust-collapse thesis, vẫn <280 ký tự.
+- Bản pitch hiện tại phù hợp mục tiêu Day 19: rõ audience, có critique loop, có decision logic và hướng kiểm chứng thực nghiệm.

@@ -8,33 +8,33 @@ Below is my 60-second pitch and Pitch Memo for an AI startup:
 
 PITCH MEMO — AI PT Copilot
 
-Audience: Seed VC (pre-seed / seed, B2C consumer & health-tech).
+Audience: Seed VC (pre-seed / seed, consumer + health-tech).
 
 1. THE PROBLEM
-Dân văn phòng 22–35 tập kháng lực một mình tại nhà/gym nhỏ không có phản hồi kỹ thuật real-time: họ xem video nhưng vẫn không biết form có an toàn hay không — stress, đau lưng/gối sai kỹ thuật, và ~71% bỏ app fitness trước tháng thứ 3 (retention B2C fitness). Pain lặp lại mỗi buổi tập; chi phí ẩn là chấn thương + bỏ tập = mất tiền subscription/PT và sức khỏe.
+71% người dùng bỏ app fitness trước tháng thứ 3; với người tập một mình, vấn đề không phải thiếu bài tập mà là không biết mình đang tập sai hay đúng trong từng set. Nếu phản hồi camera bị sai ở điều kiện nhà chật/thiếu sáng, họ mất niềm tin rất nhanh và bỏ app sớm hơn.
 
 2. THE INSIGHT
-Khoảng trống không phải “thiếu nội dung tập” mà là feedback gap — app đo được tọa độ nhưng chưa “hiểu” ý định form trong bối cảnh nhà phố thiếu sáng / góc hẹp; người dùng cần sửa lỗi trong đúng set, không phải bài giải thích dài sau khi đã tập sai.
+Rào cản lớn nhất không chỉ là "feedback gap" mà là trust collapse: niềm tin không giảm đều, mà thường sụp sau 1-2 cue sai, đặc biệt ở rep mệt cuối set; vì vậy chúng tôi tối ưu "khi nào KHONG nên nhắc" trước khi tối ưu nhắc thật nhiều.
 
 3. THE SOLUTION
-- AI PT Copilot trên smartphone: real-time form check cho Squat, Push-up, Hip Hinge bằng pose on-device + cue voice/text trong lúc tập; sau buổi tập LLM tóm tắt 3 lỗi + 1 ưu tiên cho buổi sau (PRD Day 17).
-- Khác ChatGPT / video: ChatGPT không nhìn thấy cơ thể; video một chiều không cảnh báo khi spine/gối lệch trong rep — Copilot khóa vào bài + keypoints + rule an toàn, latency thấp (pose local, LLM chủ yếu cho summary).
-- AI: pose on-device; cloud chỉ cho tóm tắt; ~0,03 USD/buổi inference → COGS ~207k VND/khách/tháng (Base Day 18), không đẩy full video lên cloud.
+- AI PT Copilot tập trung vào 3 bài rủi ro cao (Squat, Push-up, Hip Hinge): pose on-device, cue voice/text theo rep, và summary cuối buổi bằng LLM.
+- Thay vì cố "coach mọi thứ", chúng tôi ưu tiên trust: hiển thị confidence, cho user bật/tắt cue, và fallback manual mode khi tín hiệu camera kém.
+- Lợi thế không nằm ở model đơn lẻ mà ở hệ dữ liệu trust-calibration: mỗi cue được ghi nhận thành accepted/ignored, phase mệt của set, và điều kiện camera; từ đó hệ thống học ngưỡng "nên nhắc / nên im lặng" theo từng user, không chỉ đo accuracy trung bình.
 
 4. WHY NOW
-Smartphone đủ mạnh cho on-device CV; niềm tin & adoption AI tại VN cao; chi phí API foundation model cho phép tóm tắt rẻ. Hành vi tập tại nhà sau giờ làm (30–45 phút) đã bền — cần sản phẩm an toàn + minh bạch trong MVP 6 tuần (Day 17).
+On-device CV đã đủ nhanh cho phản hồi theo rep trên smartphone phổ biến; đồng thời người dùng đã quen luyện tập tại nhà sau giờ làm nhưng vẫn thiếu công cụ "an toàn để tin". Kể cả platform ngang thêm camera, lớp trust-calibration theo lịch sử vận động từng user vẫn là bài toán dọc cần workflow chuyên biệt.
 
 5. TRACTION / PROOF
-- Day 16–18: TAM 50.000; adoption Base 0,5%/tháng → ~250 khách mới/tháng sau MVP; ARPU Base 499.000 VND/tháng; LTV/CAC ≥ 3, payback ≤ 12 tháng, Unit Economics HEALTHY (kể cả Pessimistic đã chỉnh Gross > 0).
-- Day 17 PMF: Corrected-Cue Rate ≥ 60% sau 4 tuần; Week-1 Aha Activation Rate ≥ 50% (≥3 cue→correction trong 7 ngày đầu).
-- MVP 6 tuần; mục tiêu 100 user pilot.
+- Hiện trạng trung thực: chưa có CAC trả phí và chưa có paid retention đủ dài để khẳng định LTV/CAC.
+- Bằng chứng đang có: metric PMF đã định nghĩa rõ từ Day 17 (Corrected-Cue Rate, Week-1 Aha Activation, return-72h).
+- Kế hoạch kiểm chứng 6 tuần: pilot 100-150 user để đo bỏ qua cue theo session, Corrected-Cue Rate theo bài tập, tỷ lệ quay lại tuần 1-4, và tương quan false cue sớm -> churn. Go/No-Go: chỉ scale nếu Corrected-Cue >= 60% và W4 retention >= 25%.
 
 6. THE ASK
-Gọi 3.000.000.000 VND (Seed) để: ship MVP 3 bài + voice cue + session summary + consent/xóa dữ liệu; chạy 100 user pilot + cohort Corrected-Cue / return-72h; GTM partnership gym/cộng đồng (CAC Optimistic 650k). 12 tháng: repeatable acquisition + retention, churn Base 5,5%/tháng không vỡ khi scale paid UA.
+Gọi 3.000.000.000 VND (Seed) để hoàn tất MVP trust-first, chạy pilot 100-150 user, và chứng minh willingness-to-pay + retention 4 tuần trước khi scale acquisition. Mốc 12 tháng: chứng minh lớp trust-calibration tạo hành vi giữ chân vượt baseline, tức lợi thế đến từ dữ liệu hành vi riêng chứ không phải chỉ feature camera.
 
 --- TWITTER PITCH ---
 
-71% user bỏ app fitness trước T3—thiếu phản hồi form trong set, không thiếu clip. AI PT Copilot: pose on-device, cue Squat/Push-up/Hinge <300ms, LLM tóm tắt buổi. TAM 50k, ARPU 499k, unit economics lành. Seed 3 tỷ→100 user pilot, target Corrected-Cue ≥60%.
+71% user bỏ app fitness trước T3; trust sụp sau 1-2 cue sai. AI PT Copilot tối ưu "khi nào nên im lặng": cue theo rep + trust-calibration từ accepted/ignored feedback. Raise 3 tỷ VNĐ để pilot 100-150 user; chỉ scale nếu Corrected-Cue >=60% và W4 retention >=25%.
 
 Critique it ruthlessly. Answer:
 

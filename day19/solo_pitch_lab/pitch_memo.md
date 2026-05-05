@@ -1,47 +1,47 @@
 # PITCH MEMO — AI PT Copilot
 
-**Audience đã chọn (Day 19 — Step 1):** Seed VC (giai đoạn pre-seed / seed, tập trung B2C consumer & health-tech).
+**Audience đã chọn (Day 19 — Step 1):** Seed VC (giai đoạn pre-seed / seed, tập trung consumer + health-tech).
 
 ---
 
 ## 1. THE PROBLEM (1–2 câu)
 
-Dân văn phòng 22–35 tập kháng lực một mình tại nhà/gym nhỏ **không có phản hồi kỹ thuật real-time**: họ xem video nhưng vẫn không biết form có an toàn hay không — stress, đau lưng/gối sai kỹ thuật, và **~71% bỏ app fitness trước tháng thứ 3** (đặc thù retention B2C fitness). Pain lặp lại **mỗi buổi tập**; chi phí ẩn là chấn thương + bỏ tập = mất tiền subscription/PT và sức khỏe.
+**71% người dùng bỏ app fitness trước tháng thứ 3**; với người tập một mình, vấn đề không phải thiếu bài tập mà là không biết mình đang tập sai hay đúng trong từng set. Nếu phản hồi camera bị sai ở điều kiện nhà chật/thiếu sáng, họ mất niềm tin rất nhanh và bỏ app sớm hơn.
 
 ---
 
 ## 2. THE INSIGHT (1 câu)
 
-**Khoảng trống không phải “thiếu nội dung tập” mà là *feedback gap* — app đo được tọa độ nhưng chưa “hiểu” ý định form trong bối cảnh nhà phố thiếu sáng / góc hẹp**; người dùng cần **sửa lỗi trong đúng set**, không phải bài giải thích dài sau khi đã tập sai.
+Rào cản lớn nhất không chỉ là "feedback gap" mà là **trust collapse**: niềm tin không giảm đều, mà thường sụp sau 1-2 cue sai, đặc biệt ở rep mệt cuối set; vì vậy chúng tôi tối ưu "khi nào KHONG nên nhắc" trước khi tối ưu nhắc thật nhiều.
 
 ---
 
 ## 3. THE SOLUTION (3 câu)
 
-- **AI PT Copilot** trên smartphone: real-time form check cho **Squat, Push-up, Hip Hinge** bằng **pose on-device** + cue **voice/text** trong lúc tập; sau buổi tập **LLM tóm tắt** 3 lỗi + 1 ưu tiên cho buổi sau (đúng PRD Day 17).
-- **Khác ChatGPT / video:** ChatGPT không nhìn thấy cơ thể bạn; video một chiều không cảnh báo khi spine/gối lệch trong rep — Copilot **khóa vào bài + keypoints + rule an toàn** và giữ **latency thấp** (pose local, LLM chủ yếu cho summary).
-- **AI:** pose estimation chạy **on-device**; cloud chỉ cho **tóm tắt** và giới hạn **~0,03 USD/buổi** inference để giữ **COGS ~207k VND/khách/tháng** (Base Day 18) thay vì đẩy full video lên cloud.
+- **AI PT Copilot** tập trung vào 3 bài rủi ro cao (Squat, Push-up, Hip Hinge): pose on-device, cue voice/text theo rep, và summary cuối buổi bằng LLM.
+- Thay vì cố "coach mọi thứ", chúng tôi ưu tiên trust: hiển thị confidence, cho user bật/tắt cue, và fallback manual mode khi tín hiệu camera kém.
+- Lợi thế không nằm ở model đơn lẻ mà ở **hệ dữ liệu trust-calibration**: mỗi cue được ghi nhận thành accepted/ignored, phase mệt của set, và điều kiện camera; từ đó hệ thống học ngưỡng "nên nhắc / nên im lặng" theo từng user, không chỉ đo accuracy trung bình.
 
 ---
 
 ## 4. WHY NOW (1–2 câu)
 
-Smartphone đủ mạnh cho **on-device CV**; niềm tin & adoption AI tại VN cao; **chi phí API foundation model** cho phép tóm tắt buổi tập rẻ hơn trước. Hành vi **tập tại nhà sau giờ làm** (30–45 phút) đã bền — thị trường không cần chờ “AI thần kỳ”, cần **sản phẩm an toàn + minh bạch** trong MVP **6 tuần** (Day 17).
+On-device CV đã đủ nhanh cho phản hồi theo rep trên smartphone phổ biến; đồng thời người dùng đã quen luyện tập tại nhà sau giờ làm nhưng vẫn thiếu công cụ "an toàn để tin". Kể cả platform ngang thêm camera, lớp **trust-calibration theo lịch sử vận động từng user** vẫn là bài toán dọc cần workflow chuyên biệt.
 
 ---
 
 ## 5. TRACTION / PROOF (số cụ thể)
 
-- **Thị trường (Day 16–18):** TAM **50.000** khách tiềm năng phân khúc đô thị; adoption Base **0,5%/tháng** → **~250 khách mới/tháng** sau MVP; **ARPU Base 499.000 VND/tháng**; model tài chính Base có **LTV/CAC ≥ 3** và **payback ≤ 12 tháng** (Unit Economics **HEALTHY** trong sheet, kể cả kịch bản Pessimistic đã chỉnh để Gross > 0).
-- **PMF (Day 17):** North-star pilot — **Corrected-Cue Rate** (tỷ lệ session có ≥1 cue được user sửa trong cùng session) **≥ 60%** sau 4 tuần cohort mới; **Week-1 Aha Activation Rate** (≥3 lần cue→correction trong 7 ngày đầu) **≥ 50%** — gắn hành vi, không vanity DAU.
-- **Giai đoạn:** MVP **6 tuần**, mục tiêu **100 user pilot** (đúng ràng buộc timeline PRD).
+- **Hiện trạng trung thực:** chưa có CAC trả phí và chưa có paid retention đủ dài để khẳng định LTV/CAC.
+- **Bằng chứng đang có:** bài toán và metric PMF đã định nghĩa rõ từ Day 17: Corrected-Cue Rate, Week-1 Aha Activation, return-72h.
+- **Kế hoạch kiểm chứng 6 tuần:** pilot **100-150 user** để đo (1) tần suất bỏ qua cue theo session, (2) Corrected-Cue Rate theo bài tập, (3) tỷ lệ quay lại tuần 1-4, (4) tương quan "false cue sớm -> churn". **Go/No-Go thresholds:** nếu Corrected-Cue >= 60% **và** retention tuần 4 >= 25%, chúng tôi test chuyển đổi trả phí ngay; nếu dưới ngưỡng, không scale paid UA mà sửa trust layer trước.
 
 ---
 
 ## 6. THE ASK (1–2 câu)
 
-**Gọi 3.000.000.000 VND (Seed)** để: (1) ship MVP **3 bài + voice cue + session summary + consent/xóa dữ liệu** đạt ngưỡng PMF trên, (2) chạy **100 user pilot** + quan sát cohort **Corrected-Cue / return-72h**, (3) **mở rộng GTM** partnership gym/cộng đồng (giảm CAC theo kịch bản Optimistic **650k**). **12 tháng tới:** chứng minh **repeatable acquisition** + retention curve với **churn Base 5,5%/tháng** không vỡ khi scale paid UA.
+**Gọi 3.000.000.000 VND (Seed)** để hoàn tất MVP trust-first, chạy pilot 100-150 user, và chứng minh willingness-to-pay + retention 4 tuần trước khi scale acquisition. Mốc 12 tháng: chứng minh lớp trust-calibration tạo hành vi giữ chân vượt baseline (đo bằng false-cue impact và retention delta), tức lợi thế đến từ dữ liệu hành vi riêng chứ không phải chỉ "feature camera".
 
 ---
 
-*Bản này giữ đúng 6 section — ~1 trang A4 khi in.*
+*Bản này cố ý chuyển từ "model đẹp trên giấy" sang "giả thuyết rõ + kế hoạch kiểm chứng" theo góp ý VC critique.*
