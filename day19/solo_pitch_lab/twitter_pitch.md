@@ -3,10 +3,10 @@
 ## Bản cuối (sau revision — Step 5)
 
 ```
-71% user bỏ app fitness trước T3; trust sụp sau 1-2 cue sai. AI PT Copilot tối ưu "khi nào nên im lặng": cue theo rep + trust-calibration từ accepted/ignored feedback. Raise 3 tỷ VNĐ để pilot 100-150 user; chỉ scale nếu Corrected-Cue >=60% và W4 retention >=25%.
+Trong test nội bộ, 1-2 cue sai đầu buổi đủ làm user bỏ qua hầu hết feedback sau đó. AI PT Copilot học ngưỡng "nên nhắc hay im lặng" theo từng người. Raise 3 tỷ VNĐ để pilot 100-150 user; chỉ scale nếu Corrected-Cue >=60% và W4 retention >=25%.
 ```
 
-**Đếm ký tự:** 262 (code points Unicode) — dưới 280.
+**Đếm ký tự:** 243 (code points Unicode) — dưới 280.
 
 ---
 
@@ -14,9 +14,9 @@
 
 *(Giọng tự nhiên, nhấn số ở hook đầu.)*
 
-> Bảy mươi phần trăm người bỏ app fitness trước tháng thứ ba — họ không thiếu video tập; họ thiếu phản hồi form *ngay trong set*.  
-> AI PT Copilot chạy pose **trên máy**, chỉnh lưng và gối bằng cue giọng nói trong vài trăm ms, rồi LLM tóm tắt ba lỗi và một ưu tiên cho buổi sau.  
-> Chúng tôi không giả định CAC hay retention đẹp từ đầu; thay vào đó, vòng gọi **ba tỷ seed** dùng để chạy pilot một trăm user và đo paid retention thực tế trước khi scale acquisition.
+> Trong thử nghiệm nội bộ, chỉ cần một đến hai cue sai ở phiên đầu là user ngừng tin và bỏ qua các cue còn lại.  
+> AI PT Copilot không chỉ tối ưu độ chính xác tổng thể, mà tối ưu "khi nào nên im lặng" bằng trust-calibration theo lịch sử accepted/ignored cue từng người.  
+> Chúng tôi gọi **ba tỷ seed** để chạy pilot một trăm đến một trăm năm mươi user; chỉ scale khi Corrected-Cue đạt tối thiểu sáu mươi phần trăm và retention tuần bốn đạt hai mươi lăm phần trăm.
 
 ---
 

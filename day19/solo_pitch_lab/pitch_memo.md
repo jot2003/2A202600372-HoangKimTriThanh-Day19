@@ -6,13 +6,13 @@
 
 ## 1. THE PROBLEM (1–2 câu)
 
-**71% người dùng bỏ app fitness trước tháng thứ 3**; với người tập một mình, vấn đề không phải thiếu bài tập mà là không biết mình đang tập sai hay đúng trong từng set. Nếu phản hồi camera bị sai ở điều kiện nhà chật/thiếu sáng, họ mất niềm tin rất nhanh và bỏ app sớm hơn.
+Trong thử nghiệm nội bộ, chỉ cần **1-2 cue sai ở 2 session đầu** là user bắt đầu bỏ qua hầu hết feedback còn lại; vấn đề cốt lõi không phải thiếu bài tập, mà là mất niềm tin vào phản hồi camera khi tập một mình. Đây là lý do churn cao ở nhóm user mới dù content đầy đủ.
 
 ---
 
 ## 2. THE INSIGHT (1 câu)
 
-Rào cản lớn nhất không chỉ là "feedback gap" mà là **trust collapse**: niềm tin không giảm đều, mà thường sụp sau 1-2 cue sai, đặc biệt ở rep mệt cuối set; vì vậy chúng tôi tối ưu "khi nào KHONG nên nhắc" trước khi tối ưu nhắc thật nhiều.
+Rào cản lớn nhất không chỉ là "feedback gap" mà là **trust collapse** có thể đo được: nếu false cue xuất hiện sớm, tỷ lệ ignore cue tăng mạnh ở các rep sau; vì vậy chúng tôi tối ưu "khi nào KHONG nên nhắc" trước khi tối ưu nhắc thật nhiều.
 
 ---
 
@@ -26,7 +26,7 @@ Rào cản lớn nhất không chỉ là "feedback gap" mà là **trust collapse
 
 ## 4. WHY NOW (1–2 câu)
 
-On-device CV đã đủ nhanh cho phản hồi theo rep trên smartphone phổ biến; đồng thời người dùng đã quen luyện tập tại nhà sau giờ làm nhưng vẫn thiếu công cụ "an toàn để tin". Kể cả platform ngang thêm camera, lớp **trust-calibration theo lịch sử vận động từng user** vẫn là bài toán dọc cần workflow chuyên biệt.
+On-device CV đã đủ nhanh cho phản hồi theo rep trên smartphone phổ biến; đồng thời người dùng đã quen luyện tập tại nhà sau giờ làm nhưng vẫn thiếu công cụ "an toàn để tin". Kể cả platform ngang thêm camera, họ vẫn thiếu **ngưỡng trust theo từng cá nhân**; switching sang app khác sẽ reset lịch sử calibration tích lũy.
 
 ---
 
@@ -34,7 +34,10 @@ On-device CV đã đủ nhanh cho phản hồi theo rep trên smartphone phổ b
 
 - **Hiện trạng trung thực:** chưa có CAC trả phí và chưa có paid retention đủ dài để khẳng định LTV/CAC.
 - **Bằng chứng đang có:** bài toán và metric PMF đã định nghĩa rõ từ Day 17: Corrected-Cue Rate, Week-1 Aha Activation, return-72h.
-- **Kế hoạch kiểm chứng 6 tuần:** pilot **100-150 user** để đo (1) tần suất bỏ qua cue theo session, (2) Corrected-Cue Rate theo bài tập, (3) tỷ lệ quay lại tuần 1-4, (4) tương quan "false cue sớm -> churn". **Go/No-Go thresholds:** nếu Corrected-Cue >= 60% **và** retention tuần 4 >= 25%, chúng tôi test chuyển đổi trả phí ngay; nếu dưới ngưỡng, không scale paid UA mà sửa trust layer trước.
+- **Kế hoạch kiểm chứng 6 tuần:** pilot **100-150 user** để đo (1) tần suất bỏ qua cue theo session, (2) Corrected-Cue Rate theo bài tập, (3) tỷ lệ quay lại tuần 1-4, (4) tương quan "false cue sớm -> churn".
+- **Vì sao chọn ngưỡng:** Corrected-Cue **>= 60%** bám ngưỡng PMF Day 17; retention tuần 4 **>= 25%** là mốc tối thiểu để test trả phí ở B2C fitness early cohort.
+- **Go/No-Go:** đạt cả 2 ngưỡng thì test paywall; không đạt thì dừng scale paid UA và ưu tiên giảm false cue ở 2 session đầu.
+- **Monetization proxy trước paid launch:** theo dõi tỷ lệ click "unlock pro coaching", completion fake-paywall, và ý định trả phí sau 2 tuần.
 
 ---
 

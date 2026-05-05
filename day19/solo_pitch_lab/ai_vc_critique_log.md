@@ -199,3 +199,31 @@ You claim “healthy unit economics” but don’t quote **ARPU, CAC, TAM adopti
 - `pitch_memo.md`: đã có hypothesis đo được + ngưỡng quyết định scale.
 - `twitter_pitch.md`: cập nhật theo trust-collapse thesis, vẫn <280 ký tự.
 - Bản pitch hiện tại phù hợp mục tiêu Day 19: rõ audience, có critique loop, có decision logic và hướng kiểm chứng thực nghiệm.
+
+---
+
+## J. Round 4 critique (from "better" to "investable")
+
+### Điểm chính AI vặn ở Round 4
+
+- Opening vẫn dựa nhiều vào "71% internet stat", chưa đủ "owned discovery".
+- Insight tốt nhưng cần đo được/falsifiable, không chỉ câu chuyện đẹp.
+- Moat trust-calibration có tiềm năng nhưng phải chứng minh compounding + switching cost.
+- Go/No-Go threshold đã có, nhưng cần giải thích vì sao chọn các ngưỡng đó.
+- Monetization vẫn thiếu proxy thực tế trước paid launch.
+
+### Quyết định Round 4
+
+| Điểm critique | Quyết định | Hành động đã làm |
+|---------------|------------|------------------|
+| Mở bài còn borrowed insight | **Accept** | Đổi opening trong memo + twitter sang "trong test nội bộ, 1-2 cue sai đầu buổi -> user bỏ qua feedback". |
+| Insight cần measurable/falsifiable | **Accept** | Viết insight theo biến đo "false cue sớm -> ignore cue ở rep sau". |
+| Moat chưa chứng minh lock-in | **Partial** | Nêu rõ switching reset calibration history; giữ tone hypothesis, không overclaim moat tuyệt đối. |
+| Threshold có thể bị xem arbitrary | **Accept** | Bổ sung lý do chọn 60% (Day 17 PMF) và 25% W4 retention (mốc tối thiểu test paywall). |
+| Thiếu monetization proxy | **Accept** | Thêm fake-paywall proxies: click unlock, completion, intent-to-pay sau 2 tuần. |
+
+### Trạng thái sau Round 4
+
+- Pitch chuyển từ "category pain" sang "own behavioral discovery".
+- Thesis rõ: giảm false cue sớm để ngăn trust collapse -> giữ retention.
+- Case pre-seed hiện có: giả thuyết rõ, metric rõ, ngưỡng quyết định rõ, và kế hoạch monetization proxy trước paid scale.
